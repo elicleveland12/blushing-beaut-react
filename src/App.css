@@ -133,3 +133,41 @@ h3 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.pop-up {
+  z-index: 999;
+  width: 60%;
+  height: 80%;
+  margin-left: 20%;
+  margin-top: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://image.freepik.com/free-photo/christmas-background-with-balls-space-bottom_23-2147722773.jpg");
+  border: 2px solid black;
+  box-shadow: 0px 5px 20px #888888;
+}
+
+.pop-up-mobile {
+  z-index: 999;
+  width: 90%;
+  height: 60%;
+  margin-top: -200px;
+  margin-left: 3%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://image.freepik.com/free-photo/christmas-background-with-balls-space-bottom_23-2147722773.jpg");
+  border: 2px solid black;
+  box-shadow: 0px 5px 20px #888888;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: space-around;
+  align-items: center;
+}

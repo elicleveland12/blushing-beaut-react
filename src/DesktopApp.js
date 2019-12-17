@@ -8,6 +8,7 @@ import SlideShow from './Components/SlideShow';
 import IntroBlurb from './Desktop/HomeScreen/IntroBlurb';
 import CupType from './Desktop/HomeScreen/CupType';
 import TumblerCustomizer from './Desktop/Customizer/TumblerCustomizer';
+import PopUp from './Components/PopUp';
 
 let lastScrollY = 0;
 
@@ -19,7 +20,16 @@ export default class App extends Component {
     scrollArea: "top",
     cartSelected: false,
     toggle: false,
-    purchaseSuccess: false
+    purchaseSuccess: false,
+    showPopUp: false
+  }
+
+  popUpTimeout = () => {
+    setTimeout(()=>{this.setState({showPopUp: true})}, 5000)
+  }
+
+  closePopUp = () => {
+    this.setState({showPopUp: false})
   }
 
   successfulPayment = () => {
@@ -42,6 +52,8 @@ export default class App extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll, true);
+    this.popUpTimeout()
+
   }
 
   componentWillUnmount() {
@@ -80,6 +92,7 @@ export default class App extends Component {
             <div style={{backgroundColor: this.state.scrollArea === "bottom" ? 'rgba(223, 230, 233,0.7)' : null}}><h3>Customize</h3></div><br /><br /><br /><br />
             <div className="hover-class" style={{backgroundColor: this.state.cartSelected ? 'rgba(223, 230, 233,0.7)' : null}} onClick={()=>this.setState({cartSelected: !this.state.cartSelected})}><h3>Cart</h3></div>
           </div>
+          {this.state.showPopUp ? <PopUp closePopUp={this.closePopUp}/> : null}
           <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', marginLeft: 100}}>
             <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
               <SlideShow mobile={this.props.mobile}/>
