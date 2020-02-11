@@ -20,6 +20,42 @@ export default class DesktopCart extends Component {
 
   failureToast = () =>toast.error("Oops! Something went wrong")
 
+  handleSubmit = (event) => {
+	const templateId = 'template_ozHSbv56';
+  this.state.currentCart.map(item => {
+    return this.sendFeedback(templateId, {
+      id: item.id,
+      phoneNum: item.phoneNum,
+      quantity: item.quantity,
+      cupType: item.cupType,
+      size: item.size,
+      paintType: item.paintType,
+      topColor: item.topColor,
+      bottomColor: item.bottomColor,
+      swirlColors: item.swirlColors,
+      decal: item.decal,
+      textLine1: item.textLine1,
+      textLine2: item.textLine2,
+      textLine3: item.textLine3,
+      textLine4: item.textLine4,
+      fontStyle: item.fontStyle,
+      textColor: item.textColor,
+      additionalInfo: item.additionalInfo,
+      from_name: 'blushingbeauty.com'})
+  })
+  }
+
+  sendFeedback = (templateId, variables) => {
+	window.emailjs.send(
+  	'blushing_beaut', templateId,
+  	variables
+  	).then(res => {
+    	console.log('Email successfully sent!')
+  	})
+  	// Handle errors here however you like, or use a React error boundary
+  	.catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
+  }
+
   handleToken = async(token) => {
     const product = await
       {
@@ -48,6 +84,7 @@ export default class DesktopCart extends Component {
       console.log(response);
       if (status === 'success') {
         localStorage.removeItem('cart')
+        this.handleSubmit()
         this.props.successfulPayment()
         this.successToast()
       } else {

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-import scrollToComponent from 'react-scroll-to-component';
 
 import SlideShow from './Components/SlideShow';
 import IntroBlurb from './Desktop/HomeScreen/IntroBlurb';
@@ -28,16 +27,6 @@ export default class DesktopHomeScreen extends Component {
 
   closeCustomizer = () => {
     this.setState({customizeCoffee: false, customizeWine: false, toggle: !this.state.toggle})
-  }
-
-  customizeCup = async(cupType) => {
-    if (cupType === "coffee") {
-      await this.setState({customizeCoffee: true, customizeWine: false})
-      scrollToComponent(this.Coffee, {offset: -100, align: 'middle', duration: 1000, ease:'inExpo'})
-    } else {
-      await this.setState({customizeCoffee: false, customizeWine: true})
-      scrollToComponent(this.Wine, {offset: -100, align: 'middle', duration: 1000, ease:'inExpo'})
-    }
   }
 
   componentDidMount() {
@@ -91,9 +80,9 @@ export default class DesktopHomeScreen extends Component {
             <IntroBlurb/>
           </div>
           <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-            <CupType customizeCup={this.customizeCup}/>
-            <CupTypeRowTwo customizeCup={this.customizeCup}/>
-            <CupTypeRowThree customizeCup={this.customizeCup} />
+            <CupType />
+            <CupTypeRowTwo />
+            <CupTypeRowThree  />
           </div>
         </div>
       </div>

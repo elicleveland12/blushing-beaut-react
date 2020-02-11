@@ -8,7 +8,7 @@ export default class CupType extends Component {
   render(){
     return(
       <div className="cup-type">
-        <Link to={'/tumbler'} className="hover-class picker" style={{border: '3px solid #6c5ce7', height: 200, width: 300, borderRadius: 10,  display: 'flex', flexDirection: 'row', justifyContent: 'space-around', textDecoration: 'none'}} onClick={()=>this.props.customizeCup("coffee")}>
+        <Link to={'/tumbler'} className="hover-class picker" style={{border: '3px solid #6c5ce7', height: 200, width: 300, borderRadius: 10,  display: 'flex', flexDirection: 'row', justifyContent: 'space-around', textDecoration: 'none'}}>
           <div>
             <img src={require('../../images/glitter-tumbler.png')} alt="wine outline" height="200" style={{marginTop: 2}}/>
           </div>
@@ -16,7 +16,7 @@ export default class CupType extends Component {
             <h2 style={{color: '#6c5ce7'}}>Shop Customizable Coffee Tumblers</h2>
           </div>
         </Link>
-        <Link to={'/wine'} className="hover-class picker" style={{border: '3px solid #6c5ce7', height: 200, width: 300, borderRadius: 10,  display: 'flex', flexDirection: 'row', justifyContent: 'space-around', textDecoration: 'none'}} onClick={()=>this.props.customizeCup("wine")}>
+        <Link to={'/wine'} className="hover-class picker" style={{border: '3px solid #6c5ce7', height: 200, width: 300, borderRadius: 10,  display: 'flex', flexDirection: 'row', justifyContent: 'space-around', textDecoration: 'none'}}>
           <div>
             <img src={require('../../images/swirl-wine.png')} alt="wine outline" height="160" style={{marginTop: 37}}/>
           </div>
@@ -24,7 +24,7 @@ export default class CupType extends Component {
             <h2 style={{color: '#6c5ce7'}}>Shop Customizable Wine Tumblers</h2>
           </div>
         </Link>
-        <Link to={'/sippy-cup'} className="hover-class picker" style={{border: '3px solid #6c5ce7', height: 200, width: 300, borderRadius: 10,  display: 'flex', flexDirection: 'row', justifyContent: 'space-around', textDecoration: 'none'}} onClick={()=>this.props.customizeCup("wine")}>
+        <Link to={'/sippy-cup'} className="hover-class picker" style={{border: '3px solid #6c5ce7', height: 200, width: 300, borderRadius: 10,  display: 'flex', flexDirection: 'row', justifyContent: 'space-around', textDecoration: 'none'}}>
           <div>
             <img src={require('../../images/sippy-nova.png')} alt="wine outline" height="160" style={{marginTop: 37}}/>
           </div>

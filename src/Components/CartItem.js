@@ -15,79 +15,51 @@ export default class CartItem extends Component {
         </div>
         <div style={{display: 'flex', justifyContent: 'center'}}>
           {this.props.item.cupType === "coffee tumbler" ?
-            <div style={{position: 'relative', display: 'inline-block', height: 130, background: `linear-gradient(to bottom, ${this.props.item.topColor} 0%, ${this.props.item.bottomColor} 100%)`}}>
+            <div style={{position: 'relative', display: 'inline-block', height: 130}}>
               <img src={require('../images/blank-inner-coffee.gif')} style={{display: 'block', height: 130}} alt="coffee tumbler"/>
               <div style={{position: 'absolute', height: 120, width: 100, marginTop: -120, marginLeft: -15}}>
-                {this.props.item.textLine1.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine1}</p> : null}
-                {this.props.item.textLine2.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine2}</p> : null}
-                {this.props.item.textLine3.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine3}</p> : null}
-                {this.props.item.textLine4.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine4}</p> : null}
               </div>
             </div>
           :
           this.props.item.cupType === "wine tumbler" ?
-            <div style={{position: 'relative', display: 'inline-block', height: 130, background: `linear-gradient(to bottom, ${this.props.item.topColor} 0%, ${this.props.item.bottomColor} 100%)`}}>
+            <div style={{position: 'relative', display: 'inline-block', height: 130}}>
               <img src={require('../images/blank-inner-wine.gif')} style={{display: 'block', height: 130}} alt="wine tumbler"/>
               <div style={{position: 'absolute', height: 120, width: 100, marginTop: -120, marginLeft: 2.5}}>
-                {this.props.item.textLine1.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine1}</p> : null}
-                {this.props.item.textLine2.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine2}</p> : null}
-                {this.props.item.textLine3.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine3}</p> : null}
-                {this.props.item.textLine4.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine4}</p> : null}
               </div>
             </div>
           :
           this.props.item.cupType === "sippy cup" ?
-            <div style={{position: 'relative', display: 'inline-block', height: 130, background: `linear-gradient(to bottom, ${this.props.item.topColor} 0%, ${this.props.item.bottomColor} 100%)`}}>
-              <img src={require('../images/sippycup.001.png')} style={{display: 'block', height: 130}} alt="wine tumbler"/>
+            <div style={{position: 'relative', display: 'inline-block', height: 130}}>
+              <img src={require('../images/sippycup.001.png')} style={{display: 'block', height: 130}} alt="sippy tumbler"/>
               <div style={{position: 'absolute', height: 120, width: 100, marginTop: -120, marginLeft: 2.5}}>
-                {this.props.item.textLine1.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine1}</p> : null}
-                {this.props.item.textLine2.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine2}</p> : null}
-                {this.props.item.textLine3.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine3}</p> : null}
-                {this.props.item.textLine4.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine4}</p> : null}
               </div>
             </div>
           :
           this.props.item.cupType === "curved tumbler" ?
-            <div style={{position: 'relative', display: 'inline-block', height: 130, background: `linear-gradient(to bottom, ${this.props.item.topColor} 0%, ${this.props.item.bottomColor} 100%)`}}>
-              <img src={require('../images/30oz.png')} style={{display: 'block', height: 130}} alt="coffee tumbler"/>
+            <div style={{position: 'relative', display: 'inline-block', height: 130}}>
+              <img src={require('../images/30oz.png')} style={{display: 'block', height: 130}} alt="curved tumbler"/>
               <div style={{position: 'absolute', height: 120, width: 100, marginTop: -120, marginLeft: -15}}>
-                {this.props.item.textLine1.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine1}</p> : null}
-                {this.props.item.textLine2.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine2}</p> : null}
-                {this.props.item.textLine3.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine3}</p> : null}
-                {this.props.item.textLine4.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine4}</p> : null}
               </div>
             </div>
           :
           this.props.item.cupType === "skinny tumbler" ?
-            <div style={{position: 'relative', display: 'inline-block', height: 130, background: `linear-gradient(to bottom, ${this.props.item.topColor} 0%, ${this.props.item.bottomColor} 100%)`}}>
-              <img src={require('../images/skinny.png')} style={{display: 'block', height: 130}} alt="coffee tumbler"/>
+            <div style={{position: 'relative', display: 'inline-block', height: 130}}>
+              <img src={require('../images/skinny.png')} style={{display: 'block', height: 130}} alt="skinny tumbler"/>
               <div style={{position: 'absolute', height: 120, width: 100, marginTop: -120, marginLeft: -15}}>
-                {this.props.item.textLine1.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine1}</p> : null}
-                {this.props.item.textLine2.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine2}</p> : null}
-                {this.props.item.textLine3.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine3}</p> : null}
-                {this.props.item.textLine4.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine4}</p> : null}
               </div>
             </div>
           :
           this.props.item.cupType === "kids tumbler" ?
-            <div style={{position: 'relative', display: 'inline-block', height: 130, background: `linear-gradient(to bottom, ${this.props.item.topColor} 0%, ${this.props.item.bottomColor} 100%)`}}>
-              <img src={require('../images/120z_straw.png')} style={{display: 'block', height: 130}} alt="wine tumbler"/>
+            <div style={{position: 'relative', display: 'inline-block', height: 130}}>
+              <img src={require('../images/120z_straw.png')} style={{display: 'block', height: 130}} alt="kids tumbler"/>
               <div style={{position: 'absolute', height: 120, width: 100, marginTop: -120, marginLeft: 2.5}}>
-                {this.props.item.textLine1.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine1}</p> : null}
-                {this.props.item.textLine2.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine2}</p> : null}
-                {this.props.item.textLine3.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine3}</p> : null}
-                {this.props.item.textLine4.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine4}</p> : null}
               </div>
             </div>
           :
           this.props.item.cupType === "soda tumbler" ?
-            <div style={{position: 'relative', display: 'inline-block', height: 130, background: `linear-gradient(to bottom, ${this.props.item.topColor} 0%, ${this.props.item.bottomColor} 100%)`}}>
-              <img src={require('../images/can.png')} style={{display: 'block', height: 130}} alt="coffee tumbler"/>
+            <div style={{position: 'relative', display: 'inline-block', height: 130}}>
+              <img src={require('../images/can.png')} style={{display: 'block', height: 130}} alt="soda tumbler"/>
               <div style={{position: 'absolute', height: 120, width: 100, marginTop: -120, marginLeft: -15}}>
-                {this.props.item.textLine1.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine1}</p> : null}
-                {this.props.item.textLine2.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine2}</p> : null}
-                {this.props.item.textLine3.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine3}</p> : null}
-                {this.props.item.textLine4.length > 0 ? <p style={{fontSize: 8, marginTop: 15, color: this.props.item.textColor, textAlign: 'center'}}>{this.props.item.textLine4}</p> : null}
               </div>
             </div>
           :

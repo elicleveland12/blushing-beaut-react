@@ -7,7 +7,7 @@ export default class CupTypeRowThree extends Component {
   render(){
     return(
       <div className="cup-type">
-        <Link to={'/can'} className="hover-class picker" style={{border: '3px solid #6c5ce7', height: 200, width: 300, borderRadius: 10,  display: 'flex', flexDirection: 'row', justifyContent: 'space-between', textDecoration: 'none'}} onClick={()=>this.props.customizeCup("coffee")}>
+        <Link to={'/can'} className="hover-class picker" style={{border: '3px solid #6c5ce7', height: 200, width: 300, borderRadius: 10,  display: 'flex', flexDirection: 'row', justifyContent: 'space-between', textDecoration: 'none'}}>
           <div>
             <img src={require('../../images/empty can.png')} alt="wine outline" height="190" style={{marginTop: 10, marginLeft: 5}}/>
           </div>
