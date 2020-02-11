@@ -11,7 +11,7 @@ export default class IntroBlurb extends Component {
           <h1 className="gradient-text">Welcome to the Blushing Beaut!</h1>
         </div>
         <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
-          <h3>I bring stainless steel coffee and wine tumblers to life with high-quality shimmer paint, vinyl decals, and epoxies</h3>
+          <h3>I bring stainless steel tumblers to life with high-quality paints, glitter, vinyl decals, and epoxies</h3>
         </div>
         <div style={{width: '100%', display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
           <h3>These fun and festive cups make great: </h3>

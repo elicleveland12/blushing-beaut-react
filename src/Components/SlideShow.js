@@ -11,25 +11,35 @@ const fadeProperties = {
 function SlideShow(props) {
   return (
     <div style={{height: 400, width: props.mobile ? '100%' : 500, marginTop: props.mobile ? -50 : 10}}>
-      <Fade {...fadeProperties}>
+      <Fade {...fadeProperties} arrows={false} indicators={false}>
         <div className="each-fade">
           <div style={{display: 'flex', justifyContent: 'center', width: '100%',  overflow: 'hidden'}}>
-            <img src={require('../images/cupTwo.jpg')}  height="400px" alt="cup one"/>
+            <img src={require('../images/curve-glitter.png')}  height="400px" alt="cup one"/>
+          </div>
+        </div>
+        <div className="each-fade">
+          <div style={{display: 'flex', justifyContent: 'center', width: '100%',  overflow: 'hidden'}}>
+            <img src={require('../images/glitter-wine.png')}  height="400px" alt="cup one"/>
+          </div>
+        </div>
+        <div className="each-fade">
+          <div style={{display: 'flex', justifyContent: 'center', width: '100%',  overflow: 'hidden'}}>
+            <img src={require('../images/glitter-xmas.png')}  height="400px" alt="cup one"/>
           </div>
         </div>
         <div className="each-fade">
           <div style={{display: 'flex', justifyContent: 'center', width: '100%', overflow: 'hidden'}}>
-            <img src={require('../images/cupThree.jpg')}  height="400px" alt="cup two"/>
+            <img src={require('../images/sippy-nova.png')}  height="400px" alt="cup two"/>
           </div>
         </div>
         <div className="each-fade">
           <div style={{display: 'flex', justifyContent: 'center', width: '100%', overflow: 'hidden'}}>
-            <img src={require('../images/cupFour.jpg')}  height="400px" alt="cup three"/>
+            <img src={require('../images/skinny-grandma.png')}  height="400px" alt="cup three"/>
           </div>
         </div>
         <div className="each-fade">
           <div style={{display: 'flex', justifyContent: 'center', width: '100%', overflow: 'hidden'}}>
-            <img src={require('../images/cupFive.jpg')}  height="400px" alt="cup two"/>
+            <img src={require('../images/swirl-wine.png')}  height="400px" alt="cup two"/>
           </div>
         </div>
       </Fade>

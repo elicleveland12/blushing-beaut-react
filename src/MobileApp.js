@@ -30,9 +30,9 @@ export default class MobileApp extends Component {
     this.setState({displayPopUp: false})
   }
 
-  componentDidMount(){
-    this.popUpTimeout()
-  }
+  // componentDidMount(){
+  //   this.popUpTimeout()
+  // }
 
   render(){
     return(

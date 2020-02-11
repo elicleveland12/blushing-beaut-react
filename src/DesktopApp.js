@@ -1,16 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import scrollToComponent from 'react-scroll-to-component';
-import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
 import TopNavBar from './Desktop/HomeScreen/TopNavBar';
-import SlideShow from './Components/SlideShow';
-import IntroBlurb from './Desktop/HomeScreen/IntroBlurb';
-import CupType from './Desktop/HomeScreen/CupType';
+import DesktopHomeScreen from './DesktopHomeScreen';
 import TumblerCustomizer from './Desktop/Customizer/TumblerCustomizer';
-import PopUp from './Components/PopUp';
 
-let lastScrollY = 0;
 
 export default class App extends Component {
 
@@ -22,14 +18,6 @@ export default class App extends Component {
     toggle: false,
     purchaseSuccess: false,
     showPopUp: false
-  }
-
-  popUpTimeout = () => {
-    setTimeout(()=>{this.setState({showPopUp: true})}, 5000)
-  }
-
-  closePopUp = () => {
-    this.setState({showPopUp: false})
   }
 
   successfulPayment = () => {
@@ -50,29 +38,6 @@ export default class App extends Component {
     }
   }
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll, true);
-    this.popUpTimeout()
-
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  nav = React.createRef();
-
-  handleScroll = () => {
-    lastScrollY = window.scrollY;
-    if (lastScrollY < 90) {
-      this.setState({scrollArea: "top"})
-    } else if (lastScrollY > 91 && lastScrollY < 650 ) {
-      this.setState({scrollArea: "middle"})
-    } else if (lastScrollY > 651) {
-      this.setState({scrollArea: "bottom"})
-    }
-  };
-
   toggleShowCart = () => {
     this.setState({cartSelected: true})
   }
@@ -83,43 +48,23 @@ export default class App extends Component {
 
   render(){
     return(
-      <div className="app-container-home">
-        <nav ref={this.nav}>
-          <TopNavBar purchaseSuccess={this.state.purchaseSuccess} successfulPayment={this.successfulPayment} cartSelected={this.state.cartSelected} toggleShowCart={this.toggleShowCart} toggleHideCart={this.toggleHideCart} toggle={this.state.toggle}/>
-          <div style={{display: 'flex', flexDirection: 'column', position: 'fixed', top:70, left: 0, width: '15%', height: window.screen.height, backgroundColor: 'rgba(99, 110, 114,0.4)', textAlign: 'right'}}>
-            <div style={{backgroundColor: this.state.scrollArea === "top" ? 'rgba(223, 230, 233,0.7)' : null, marginTop: 100}}><h3>About</h3></div><br /><br /><br /><br />
-            <div style={{backgroundColor: this.state.scrollArea === "middle" ? 'rgba(223, 230, 233,0.7)' : null}}><h3>Select Type</h3></div><br /><br /><br /><br />
-            <div style={{backgroundColor: this.state.scrollArea === "bottom" ? 'rgba(223, 230, 233,0.7)' : null}}><h3>Customize</h3></div><br /><br /><br /><br />
-            <div className="hover-class" style={{backgroundColor: this.state.cartSelected ? 'rgba(223, 230, 233,0.7)' : null}} onClick={()=>this.setState({cartSelected: !this.state.cartSelected})}><h3>Cart</h3></div>
-          </div>
-          {this.state.showPopUp ? <PopUp closePopUp={this.closePopUp}/> : null}
-          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', marginLeft: 100}}>
-            <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
-              <SlideShow mobile={this.props.mobile}/>
-              <IntroBlurb/>
-            </div>
-            <div style={{display: 'flex', justifyContent: 'center'}}>
-              <CupType customizeCup={this.customizeCup}/>
-            </div>
-            {this.state.customizeCoffee ?
-              <div ref={(section) => { this.Coffee = section; }} style={{width: '90%', backgroundColor: 'white', border: '3px solid #6c5ce7', borderRadius: 10, marginLeft: '5%', marginTop: 20}}>
-                <HighlightOffIcon className="hover-class" style={{top: 8, right: 8, color: '#6c5ce7', fontSize: 40}} onClick={()=>this.setState({customizeCoffee: false, customizeWine: false})}/>
-                <TumblerCustomizer coffee={true} closeCustomizer={this.closeCustomizer}/>
-              </div>
-            :
-              null
-            }
-            {this.state.customizeWine ?
-              <div ref={(section) => { this.Wine = section; }} style={{width: '90%', backgroundColor: 'white', border: '3px solid #6c5ce7', borderRadius: 10, marginLeft: '5%', marginTop: 20}}>
-                <HighlightOffIcon className="hover-class" style={{top: 8, right: 8, color: '#6c5ce7', fontSize: 40}} onClick={()=>this.setState({customizeCoffee: false, customizeWine: false})}/>
-                <TumblerCustomizer coffee={false} closeCustomizer={this.closeCustomizer}/>
-              </div>
-            :
-              null
-            }
-          </div>
-        </nav>
-      </div>
+      <Router>
+        <div className="app-container-home">
+          <nav ref={this.nav}>
+            <TopNavBar purchaseSuccess={this.state.purchaseSuccess} successfulPayment={this.successfulPayment} cartSelected={this.state.cartSelected} toggleShowCart={this.toggleShowCart} toggleHideCart={this.toggleHideCart} toggle={this.state.toggle}/>
+            <Switch>
+              <Route path="/" exact component={DesktopHomeScreen} />
+              <Route path="/tumbler" exact component={() => <TumblerCustomizer tall={true} coffee={true} />} />
+              <Route path="/wine" exact component={() => <TumblerCustomizer tall={false} wine={true} />} />
+              <Route path="/sippy-cup" exact component={() => <TumblerCustomizer tall={false} sippy={true} />} />
+              <Route path="/curve" exact component={() => <TumblerCustomizer tall={true} curve={true} />} />
+              <Route path="/skinny" exact component={() => <TumblerCustomizer tall={true} skinny={true} />} />
+              <Route path="/kids-cup" exact component={() => <TumblerCustomizer tall={false} kids={true}/>} />
+              <Route path="/can" exact component={() => <TumblerCustomizer tall={true} can={true}/>} />
+            </Switch>
+          </nav>
+        </div>
+      </Router>
     )
   }
 }

@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import '../../App.css';
+import { Link } from 'react-router-dom';
+
 import DesktopCart from './DesktopCart';
 
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -38,10 +40,10 @@ export default class TopNavBar extends Component {
   render(){
     return(
       <div className="top-nav-bar">
-        <div className="hover-class" style={{display: 'flex', flexDirection: 'row', paddingLeft: 10, alignItems: 'center'}}>
+        <Link to={'/'} className="hover-class" style={{display: 'flex', flexDirection: 'row', paddingLeft: 10, alignItems: 'center', textDecoration: 'none'}}>
           <img src={require(`../../images/MockupLogo.gif.png`)} style={{width: 90, height: 75}} alt="BB logo"/>
           <h1 className="hover-class" style={{color: '#6c5ce7'}}>Blushing Beaut</h1>
-        </div>
+        </Link>
         <div className="hover-class" style={{display: 'flex', flexDirection: 'row', paddingRight: 10, alignItems: 'center'}}>
           <InstagramIcon className="hover-class" style={{fontSize: 40, color: '#6c5ce7'}} onClick={() => window.open('https://www.instagram.com/blushin_beaut/')}/>
           <FacebookIcon className="hover-class" style={{fontSize: 40, color: '#6c5ce7', marginLeft: 10}} onClick={()=>window.open('https://www.facebook.com/jenna.whitmeyer')}/>
