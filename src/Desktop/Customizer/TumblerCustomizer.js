@@ -82,7 +82,7 @@ export default class TumblerCustomizer extends Component {
         amount: this.props.coffee ? (3000 * this.state.quantity) : this.props.wine ? (2000 * this.state.quantity) : this.props.sippy ? (2000 * this.state.quantity) : this.props.curve ? this.state.size === "small" ? (3000 * this.state.quantity) : (4000 * this.state.quantity) : this.props.skinny ? this.state.size === "small" ? (3000 * this.state.quantity) : (4000 * this.state.quantity) : this.props.kids ? (2000 * this.state.quantity) : (2500 * this.state.quantity),
         quantity: this.state.quantity,
         paintType: this.state.paintType,
-        swirlColors: this.state.paintType === "alcohol_swirl" ? "1: " + this.state.swirlColorOne + "-2: " + this.state.swirlColorTwo + "-3: " + this.state.swirlColorThree : null,
+        swirlColors: this.state.paintType === "alcohol_swirl" ? `1:${this.state.swirlColorOne}- 2:${this.state.swirlColorTwo}- 3:${this.state.swirlColorThree}` : null,
         decal: this.state.addDecal,
         phoneNum: this.state.phoneNum,
         size: this.state.size
