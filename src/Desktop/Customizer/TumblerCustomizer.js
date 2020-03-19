@@ -127,7 +127,9 @@ export default class TumblerCustomizer extends Component {
       <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', marginLeft: '2%'}}>
         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', marginTop: 5}}>
           <div style={{display: 'flex', flexDirection: 'column', position: 'fixed', top:70, left: 0, width: '8%', height: window.screen.height, backgroundColor: '#f7f1e3', textAlign: 'right', zIndex: 998}}>
-            <div style={{ marginTop: 80}}><h2 style={{color: '#84817a', textAlign: 'center'}}>Paint</h2></div>
+            <div style={{ marginTop: 80}}>
+              <h2 style={{color: '#84817a', textAlign: 'center'}}>Paint</h2>
+            </div>
             {this.state.paintType === "paint" || this.state.paintType === "glitter" ?
               this.state.topColor !== 'white' || this.state.bottomColor !== 'white' ?
                 <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
@@ -152,7 +154,7 @@ export default class TumblerCustomizer extends Component {
               null
             }
             <div className="hover-class" style={{marginTop: 80}}><h2 style={{color: '#84817a', textAlign: 'center'}}>Details</h2></div>
-            {this.state.phoneNum.length > 0 ?
+            {this.state.phoneNum.length > 9 ?
               <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
                 <CheckCircleIcon style={{fontSize: 30, color: 'green', textAlign: 'center', marginTop: 5}}/>
               </div>

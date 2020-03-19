@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../App.css';
+import { Link } from 'react-router-dom';
 import MobileCart from './MobileCart';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuOpenIcon from '@material-ui/icons/MenuOpen';
@@ -60,10 +61,10 @@ export default class TopNavBar extends Component {
     return(
       <div style={{display: 'flex', position: 'fixed', flexDirection: 'column', justifyContent: 'space-between', width: '100%', backgroundColor: '#dfe6e9', height: this.state.expandMenu ? 120 : 70, borderBottom: '2px solid #6c5ce7', top:0, left:0, right:0, zIndex: 999}}>
         <div style={{display: 'flex', flexDirection: 'row', width: '100%', alignItems: 'center', justifyContent: 'space-between'}}>
-          <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+          <Link to={'/'} className="hover-class" style={{display: 'flex', flexDirection: 'row', alignItems: 'center', textDecoration: 'none'}}>
             <img src={require(`../images/MockupLogo.gif.png`)} style={{width: 70, height: 50}} alt="BB logo"/>
             <h2 style={{color: '#6c5ce7'}}>Blushing Beaut</h2>
-          </div>
+          </Link>
           <div>
             {this.state.expandMenu ?
               <MenuOpenIcon style={{color: '#6c5ce7', fontSize: 30, marginRight: 5}} onClick={()=>this.setState({expandMenu: false})}/>
