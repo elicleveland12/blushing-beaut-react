@@ -172,7 +172,7 @@ export default class DesktopCart extends Component {
         {Object.keys(this.state.currentCart).length > 0 ?
           <div style={{display: 'flex', width: '100%', justifyContent: 'center', position: 'absolute', bottom: 25}}>
             <StripeCheckout
-              stripeKey={'pk_test_YyJ4zsu33jb6sFQvyG0iVhWn00DtFUbYTQ'}
+              stripeKey={'pk_live_h76oMWpzL17fwzNrt3VCY6F900FNfxOdCL'}
               token={this.handleToken}
               billingAddress
               shippingAddress

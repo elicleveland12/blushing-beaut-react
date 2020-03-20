@@ -115,5 +115,3 @@ export default class MobileHomeScreen extends Component {
     )
   }
 }
-
-//<MobileCupType customizeCup={this.customizeCup} type={this.state.customize} toggleCounter={this.toggleCounter}/>
