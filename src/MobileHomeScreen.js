@@ -109,7 +109,7 @@ export default class MobileHomeScreen extends Component {
               <h2 style={{color: '#6c5ce7', textAlign: 'center'}}>Soda Can Tumblers</h2>
             </div>
           </Link>
-          <div style={{height: 250}}/>
+          <div style={{height: 100}}/>
         </div>
       </div>
     )

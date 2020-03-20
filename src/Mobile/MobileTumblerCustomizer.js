@@ -564,7 +564,7 @@ export default class MobileTumblerCustomizer extends Component {
             null
           }
         </div>
-        <div style={{height: 200}}/>
+        <div style={{height: 100}}/>
       </div>
     )
   }
