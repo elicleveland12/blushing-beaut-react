@@ -36,7 +36,7 @@ export default class MobileHomeScreen extends Component {
   render(){
     return(
       <div style={{display: 'flex', flexDirection: 'column'}}>
-        <div style={{marginTop: -68, width: '135%', height: 100, display: 'flex', flexDirection: 'row', justifyContent: 'space-around', backgroundImage: 'url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v830-sasi-50.jpg?auto=format&bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1400&s=49a5b12cd66835cd44df513875e20c50'}}>
+        <div style={{marginTop: -68, width: '100%', height: 100, display: 'flex', flexDirection: 'row', justifyContent: 'space-around', backgroundImage: 'url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v830-sasi-50.jpg?auto=format&bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1400&s=49a5b12cd66835cd44df513875e20c50'}}>
           <img src={require('./images/curve-glitter.png')} alt="banner" style={{height: '95%', marginLeft: 10, transform: 'rotate(-0.05turn)'}}/>
           <img src={require('./images/sippy-nova.png')} alt="banner" style={{height: '65%', marginTop: 15, transform: 'rotate(0.05turn)'}}/>
           <img src={require('./images/skinny-grandma.png')} alt="banner" style={{height: '95%', transform: 'rotate(-0.05turn)'}}/>
@@ -45,7 +45,7 @@ export default class MobileHomeScreen extends Component {
         </div>
         {this.state.displayPopUp ? <PopUpMobile closePopUpMobile={this.closePopUpMobile}/> : null}
         <SlideShow mobile={this.props.mobile} />
-        <div style={{width: '135%', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <div style={{width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
           <Link to={'/tumbler'} className="hover-class picker" style={{border: '3px solid #6c5ce7', height: 200, width: '90%', borderRadius: 10,  display: 'flex', flexDirection: 'row', justifyContent: 'space-around', textDecoration: 'none'}}>
             <div>
               <img src={require('./images/glitter-tumbler.png')} alt="wine outline" height="200" style={{marginTop: 2}}/>

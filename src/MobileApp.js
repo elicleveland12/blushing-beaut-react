@@ -41,7 +41,7 @@ export default class MobileApp extends Component {
           <nav ref={this.nav}>
             <MobileNav toggle={this.state.toggle}/>
             <Switch>
-              <Route path="/" exact component={MobileHomeScreen} />
+              <Route path="/" exact component={() => <MobileHomeScreen mobile={this.props.mobile}/>} />
               <Route path="/tumbler" exact component={() => <MobileTumblerCustomizer tall={true} coffee={true} />} />
               <Route path="/tumbler" exact component={() => <MobileTumblerCustomizer tall={true} coffee={true} />} />
               <Route path="/wine" exact component={() => <MobileTumblerCustomizer tall={false} wine={true} />} />

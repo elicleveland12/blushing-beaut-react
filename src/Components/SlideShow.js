@@ -9,8 +9,9 @@ const fadeProperties = {
 }
 
 function SlideShow(props) {
+  console.log(props.mobile);
   return (
-    <div style={{height: 400, width: props.mobile ? '100%' : 500, marginTop: props.mobile ? -50 : 10}}>
+    <div style={{height: 400, width: props.mobile ? null : 500, marginTop: 10}}>
       <Fade {...fadeProperties} arrows={false} indicators={false}>
         <div className="each-fade">
           <div style={{display: 'flex', justifyContent: 'center', width: '100%',  overflow: 'hidden'}}>
