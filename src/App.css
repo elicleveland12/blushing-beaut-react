@@ -188,3 +188,35 @@ h3 {
 .picker:hover {
   background-color: rgba(162, 155, 254,0.2);
 }
+
+.Added-To-Cart-Modal {
+  position: absolute;
+  height: 25vh;
+  width: 25vw;
+  top: 37.5vh;
+  left: 37.5vw;
+  background-color: #74b9ff;
+  border: 2px solid #0984e3;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999;
+}
+
+.Added-To-Cart-Modal-Mobile {
+  position: absolute;
+  height: 25vh;
+  width: 60vw;
+  top: 37.5vh;
+  left: 20vw;
+  background-color: #74b9ff;
+  border: 2px solid #0984e3;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999;
+}

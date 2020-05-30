@@ -72,12 +72,16 @@ export default class MobileCart extends Component {
     this.setState({processingCost: ((this.state.cartTotal * 0.09) + (this.state.cartTotal * 0.029) + 830)})
   }
 
-  componentDidMount = async() => {
+  probeLocalStorage = async() => {
     const currentCart = await JSON.parse(localStorage.getItem('cart'))
     if (this.props.currentCart) {
       this.calculateTotal(currentCart)
       this.calculateProcessingEst()
     }
+  }
+
+  componentDidMount() {
+    setInterval(this.probeLocalStorage, 3000)
   }
 
   componentDidUpdate = (prevProps) => {

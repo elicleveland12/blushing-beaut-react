@@ -19,11 +19,15 @@ export default class TopNavBar extends Component {
     this.setState({cartCounter: value})
   }
 
-  componentDidMount = async() => {
+  probeLocalStorage = async() => {
     const currentCart = await JSON.parse(localStorage.getItem('cart'))
     if (currentCart) {
       this.setState({cartCounter: currentCart.length})
     }
+  }
+
+  componentDidMount() {
+    setInterval(this.probeLocalStorage, 3000)
   }
 
   componentDidUpdate = async(prevProps) => {

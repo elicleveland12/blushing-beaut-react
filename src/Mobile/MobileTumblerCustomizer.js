@@ -50,7 +50,8 @@ export default class MobileTumblerCustomizer extends Component {
     phoneNum: "",
     paintStuff: false,
     wordStuff: false,
-    detailStuff: false
+    detailStuff: false,
+    addedToCart: false
   }
 
   handleOnChange = value => {
@@ -98,8 +99,10 @@ export default class MobileTumblerCustomizer extends Component {
       swirlColorThree: "white",
       additionalInfo: "",
       addDecal: false,
-      phoneNum: ""
+      phoneNum: "",
+      addedToCart: true
     })
+    setTimeout(()=>this.setState({addedToCart: true}), 7500);
   }
 
   componentDidMount = async() => {
@@ -564,6 +567,14 @@ export default class MobileTumblerCustomizer extends Component {
             null
           }
         </div>
+        {this.state.addedToCart &&
+          <div className="Added-To-Cart-Modal-Mobile">
+            <h1>Added to cart! :)</h1>
+            <div className="hover-class" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: 30, width: 100, backgroundColor: '#0984e3', borderRadius: 5}} onClick={()=>this.setState({addedToCart: false})}>
+              <h5 style={{color: 'white'}}>OK</h5>
+            </div>
+          </div>
+        }
         <div style={{height: 100}}/>
       </div>
     )

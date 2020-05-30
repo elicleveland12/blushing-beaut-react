@@ -23,11 +23,15 @@ export default class TopNavBar extends Component {
     this.setState({purchaseSuccess: true, currentCart: [], cartCounter: 0})
   }
 
-  componentDidMount = async() => {
+  probeCart = async() => {
     const currentCart = await JSON.parse(localStorage.getItem('cart'))
     if (currentCart) {
       this.setState({currentCart: currentCart, cartCounter: currentCart.length})
     }
+  }
+
+  componentDidMount() {
+    setInterval(this.probeCart, 3000);
   }
 
   toggleHideCart = () => {

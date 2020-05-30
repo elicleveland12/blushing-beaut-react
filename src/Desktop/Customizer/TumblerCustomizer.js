@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ReactPhoneInput from "react-phone-input-2";
+import '../../App.css';
 
 import CupType from '../HomeScreen/CupType';
 import CupTypeRowTwo from '../HomeScreen/CupTypeRowTwo';
@@ -43,7 +44,8 @@ export default class TumblerCustomizer extends Component {
     swirlThree: false,
     swirlColorThree: "white",
     addDecal: false,
-    phoneNum: ""
+    phoneNum: "",
+    addedToCart: false
   }
 
   handleOnChange = value => {
@@ -109,8 +111,10 @@ export default class TumblerCustomizer extends Component {
       swirlColorThree: "white",
       additionalInfo: "",
       addDecal: false,
-      phoneNum: ""
+      phoneNum: "",
+      addedToCart: true
     })
+    setTimeout(()=>this.setState({addedToCart: false}), 7500);
   }
 
 
@@ -487,6 +491,14 @@ export default class TumblerCustomizer extends Component {
             <CupTypeRowTwo />
           }
         </div>
+        {this.state.addedToCart &&
+          <div className="Added-To-Cart-Modal">
+            <h1>Added to cart! :)</h1>
+            <div className="hover-class" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: 30, width: 100, backgroundColor: '#0984e3', borderRadius: 5}} onClick={()=>this.setState({addedToCart: false})}>
+              <h5 style={{color: 'white'}}>OK</h5>
+            </div>
+          </div>
+        }
       </div>
     )
   }
